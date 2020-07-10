@@ -1,0 +1,10 @@
+docker run -it -p 3000:3000 CONTAINER_ID
+
+Add stdin_open property to your docker-compose.yml file
+
+      web:
+        stdin_open: true
+
+Make sure you rebuild your containers after making this change with  docker-compose down && docker-compose up --build
+
+docker run -it -p 3000:3000 -v /app/node_modules -v $(pwd):/app image_id
